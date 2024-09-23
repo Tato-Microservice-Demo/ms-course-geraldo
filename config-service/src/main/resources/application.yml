@@ -1,0 +1,22 @@
+server:
+    port: 8081
+
+spring:
+    cloud:
+        config:
+            server:
+                git:
+                    uri: https://github.com/Tato-Microservice-Demo/ms-course-geraldo.git
+                    search-paths: config-data
+                    username: 'gfachuy'
+                    password: ${GIT_PASSWORD}
+                default-label: master
+        profiles:
+            active: git
+    security:
+        user:
+            name: root
+            password: s3cr3t
+logging:
+    level:
+        org.springframework.cloud: DEBUG
